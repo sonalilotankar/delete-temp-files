@@ -16,7 +16,7 @@ We all carry out these tasks manually, although it doesn't seem like a very diff
 
 Hence, let's create a tool that can complete all of the aforementioned tasks with a single click and will not take more than 2sec's. 
 
-Step 1: In notepad, paste the following code, then save the file with the “.ps1” extension. A file with the extension ".ps1" is a Windows powershell file.
+Step 1: Download the utility. A file with the extension ".ps1" is a Windows powershell file.
 Step 2: Simply right-click the file and select "run with powershell" to launch it.
 
 Note: Please note that the path below has the symbol '*', which denotes 'All'. It might give you the error, cause here basically your system's username will come. Hence, carefully review the path and replace it in the code.
