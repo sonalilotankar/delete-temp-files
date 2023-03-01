@@ -1,29 +1,36 @@
-Experiencing low disc space issues? what can be done to speed up the system. Almost every Windows user has this issue occasionally, and the first solution that springs to mind is to delete temporary files, perform disc cleanup, and delete recycle bin files. Although the procedure to delete those files is fairly simple, it takes a lot of time. Why not create a utility that can clean up the disc, delete all the temporary files, and remove everything from the recycle bin to avoid this issue?
- 
-The worst effect is caused by temporary files fragmenting the disc. If they are not removed over time, they gradually occupy more and more storage space, which could result in a lack of capacity for adding new files, expanding current files, or adding or extending virtual memory files, which slows down or even crashes computers. Your computer may slow down as the storage capacity is depleted because the computer must manage more huge files.
- 
-We use several methods, to speed up the system. Such as,
-Step 1: Navigate to the path listed below, pick all the data, and then remove it.
+In this article, we will discuss how to delete a temp files, recycle bin data and perform disk cleanup using powershell script in Windows. 
+Windows user sometimes faced low disk space error with the error "You're running out of space on this PC. Manage storage to view usage and free up some space." When the folder gets full, this error would appear on Windows startup. When Windows prompts low disk space warning messages, you can hardly save new data, download apps, play games or install a recent Windows update. What's worse, PC performance may be affected. 
+A temp directory or temporary folder is a directory on a storage medium, such as on a hard drive, used to store temporary files. Temp files often have the extension .TMP and are stored in the C:\Users\AppData\Local\Temp  and C:\Windows\Temp folder.
+For example, If you’re working on a document, your word-processing app may create a temporary file to track your progress. If the app crashes, you’ll be able to recover your data from the temp file. Also, the software that created the temp file should also automatically delete temporary files from Windows when they’re no longer needed.
+But when automatic removal doesn’t happen, temporary files become junk files that build up, waste storage space, and gunk up your computer. This is when it’s time to permanently delete those files from your Windows PC.
+
+Usually, we perform some steps to delete temp files. such as,
+1) Clear temp file with disk cleanup and,
+2) Clear other temp files from different locations, such as,
 C:\Windows\Temp
 C:\Windows\Prefetch
 C:\Users\*\Recent
 C:\Users\*\AppData\Local\Temp
- 
-Step 2: Do a disc cleanup and remove all unnecessary data from the computer.
-Step 3: Remove recycle bin data files.
+3) Delete data from recycle bin, etc.
 
-We all carry out these tasks manually, although it doesn't seem like a very difficult job. Also, it won't take long—probably not more than 10 to 15 minutes. But what if a single utility handled everything? It will complete all of the aforementioned duties with a single click. Easy, huh.
+And, Deleting the data is unlikely to free up more than several hundred megabytes at most. Deleting this much data manually, takes some time and the most it is require lots of manual intervention. So, to avoid this issue, Lets create a utility. Through this utility, we do not require any manual intervention, and it will delete all the data from the above-mentioned locations, perform disk cleanup and also clears recycle bin. Also, this utility will not take much time, I mean its hardly will take 2 -3 sec to run.
+In this article, we will discuss how to delete a temp files, recycle bin data and perform disk cleanup using powershell script in Windows. 
 
-Hence, let's create a tool that can complete all of the aforementioned tasks with a single click and will not take more than 2sec's. 
+Approach:
+1) Fetch the path from your system that needs to be get deleted
+2) Set Get-ChildItem command to delete the data from the path.
+3) Stop
 
-Step 1: Download the utility. A file with the extension ".ps1" is a Windows powershell file.
-Step 2: Simply right-click the file and select "run with powershell" to launch it.
+Steps to perform to execute utility:
+Step 1: DOwnload the utility.
+Step 2: Right click on this file and click on ‘Run with powershell’ and launch it.
 
+Note:
 Note: Please note that the path below has the symbol '*', which denotes 'All'. It might give you the error, cause here basically your system's username will come. Hence, carefully review the path and replace it in the code.
 
 C:\Users\*\Recent
 C:\Users\*\AppData\Local\Temp
- 
+
 
 Get-ChildItem: Retrieves the specified items and their children items from one or more locations.
 
@@ -31,4 +38,6 @@ ErrorAction SilentlyContinue:  The error message "PermissionDenied to the SECURI
 
 Cleanmgr: Removes unused files from the hard drive of your computer. Temp files, Internet files, downloaded files, and Recycle Bin files can all be cleared using command-line parameters.
 
-/sagerun:n :If you use the /sageset option, it executes the tasks that are provided and allocated to the n number. The chosen profile is applied to each drive after the computer's drives have been listed.
+/sagerun:n
+
+If you use the /sageset option, it executes the tasks that are provided and allocated to the n number. The chosen profile is applied to each drive after the computer's drives have been listed.
