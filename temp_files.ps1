@@ -17,11 +17,11 @@ $Path2 = 'C' + ':\Windows\Prefetch'
 Get-ChildItem $Path2 -Force -Recurse -ErrorAction SilentlyContinue | 
 Remove-Item -Recurse -Force -ErrorAction SilentlyContinue  
  
-$Path3 = 'C' + ':\Users\suraj lotankar\Recent' 
+$Path3 = 'C' + ':\Users\*\Recent' 
 Get-ChildItem $Path3 -Force -Recurse -ErrorAction SilentlyContinue |
 Remove-Item -Recurse -Force -ErrorAction SilentlyContinue 
 
-$Path4 = 'C' + ':\Users\SURAJL~1\AppData\Local\Temp' 
+$Path4 = 'C' + ':\Users\*\AppData\Local\Temp' 
 Get-ChildItem $Path4 -Force -Recurse -ErrorAction SilentlyContinue |
 Remove-Item -Recurse -Force -ErrorAction SilentlyContinue 
 
