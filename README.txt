@@ -20,7 +20,7 @@ C:\Users\*\Recent
 C:\Users\*\AppData\Local\Temp
 
 Recycle bin data deletions:
-If you want to delete only specific files on recycle bin, just mentioned those in -exclude in the code.
+If you want to delete only specific files on recycle bin, just mentioned those using -exclude in the code.
 
 
 Get-ChildItem: Retrieves the specified items and their children items from one or more locations.
